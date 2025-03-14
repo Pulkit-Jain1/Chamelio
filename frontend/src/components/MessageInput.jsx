@@ -122,25 +122,6 @@ const fetchLastTenTextMessages = async () => {
   }
 };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (!file.type.startsWith("image/")) {
@@ -218,7 +199,7 @@ const fetchLastTenTextMessages = async () => {
             onChange={handleImageChange}
           />
 
-          <button
+          {/* <button
             type="button"
             // className={`sm:flex btn btn-circle
             //          ${imagePreview ? "text-emerald-500" : "text-zinc-400"}`}
@@ -238,7 +219,29 @@ const fetchLastTenTextMessages = async () => {
           >
             <Image size={20} />
           </button>
-        </div>
+        </div> */}
+
+
+          <button
+  type="button"
+  className={`btn btn-circle btn-sm sm:btn-md hover:text-primary
+    ${imagePreview ? "text-emerald-500" : "text-zinc-400"}`}
+  onClick={fetchLastTenTextMessages}
+>
+  <Sparkles className="h-4 w-4 sm:size-5" />
+</button>
+
+<button
+  type="button"
+  className={`btn btn-circle btn-sm sm:btn-md hover:text-primary
+    ${imagePreview ? "text-emerald-500" : "text-zinc-400"}`}
+  onClick={() => fileInputRef.current?.click()}
+>
+  <Image className="h-4 w-4 sm:size-5" />
+</button>
+</div>
+
+
         {/* <button
           type="submit"
           className="btn btn-sm btn-circle"
@@ -247,14 +250,25 @@ const fetchLastTenTextMessages = async () => {
           <Send size={22} />
         </button> */}
 
-
+{/* 
         <button
   type="submit"
   className="btn btn-circle min-h-0 h-11.2 w-11.2 flex items-center justify-center p-0"
   disabled={!text.trim() && !imagePreview}
 >
   <Send size={23} className="text-current" />
+</button> */}
+
+
+
+<button
+  type="submit"
+  className="btn btn-circle btn-sm sm:btn-md flex items-center justify-center"
+  disabled={!text.trim() && !imagePreview}
+>
+  <Send className="h-4 w-4 sm:size-5 text-current" />
 </button>
+
 
 
       </form>
