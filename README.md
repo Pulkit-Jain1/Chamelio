@@ -58,7 +58,7 @@ NODE_ENV=development
 
 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/chamelio.git
+git clone https://github.com/Pulkit-Jain1/chamelio.git
 cd chamelio
 ```
 
